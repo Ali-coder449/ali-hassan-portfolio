@@ -1,6 +1,6 @@
+
 import { useState, useEffect } from 'react';
 import DarkModeToggle from './DarkModeToggle';
-import SearchBar from './SearchBar';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -42,15 +42,11 @@ const Navbar = () => {
           <button onClick={() => scrollToSection('skills')} className="nav-link">Skills</button>
           <button onClick={() => scrollToSection('projects')} className="nav-link">Projects</button>
           <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
-          <div className="flex items-center space-x-4">
-            <SearchBar />
-            <DarkModeToggle />
-          </div>
+          <DarkModeToggle />
         </div>
         
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-4">
-          <SearchBar />
           <DarkModeToggle />
           <button 
             className="text-foreground focus:outline-none"
