@@ -47,11 +47,11 @@ const About = () => {
                       <div className="grid grid-cols-2 gap-4 text-left">
                         <div>
                           <p className="text-sm font-medium text-portfolio-gray">Email:</p>
-                          <p className="font-medium text-portfolio-dark">contact@alihassan.dev</p>
+                          <p className="font-medium text-portfolio-dark">alihassan.dev8@gmail.com</p>
                         </div>
                         <div>
                           <p className="text-sm font-medium text-portfolio-gray">Phone:</p>
-                          <p className="font-medium text-portfolio-dark">+92 123 456 7890</p>
+                          <p className="font-medium text-portfolio-dark">+92 321 691 1480</p>
                         </div>
                         <div>
                           <p className="text-sm font-medium text-portfolio-gray">Experience:</p>

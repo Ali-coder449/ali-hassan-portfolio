@@ -31,16 +31,16 @@ const Skills = () => {
         { name: 'CSS3', percentage: 90, color: 'bg-portfolio-blue' },
         { name: 'JavaScript', percentage: 85, color: 'bg-portfolio-yellow' },
         { name: 'Bootstrap', percentage: 90, color: 'bg-portfolio-green' },
-        { name: 'React.js', percentage: 85, color: 'bg-portfolio-blue' },
+        { name: 'React.js', percentage: 90, color: 'bg-portfolio-blue' },
       ]
     },
     {
       title: 'Tools & Others',
       skills: [
-        { name: 'Git & GitHub', percentage: 80, color: 'bg-portfolio-dark' },
-        { name: 'Responsive Design', percentage: 90, color: 'bg-portfolio-blue' },
-        { name: 'UI/UX Basics', percentage: 75, color: 'bg-portfolio-green' },
-        { name: 'Performance Optimization', percentage: 70, color: 'bg-portfolio-yellow' },
+        { name: 'Git & GitHub', percentage: 85, color: 'bg-portfolio-dark' },
+        { name: 'Responsive Design', percentage: 95, color: 'bg-portfolio-blue' },
+        { name: 'UI/UX Basics', percentage: 90, color: 'bg-portfolio-green' },
+        { name: 'Performance Optimization', percentage: 85, color: 'bg-portfolio-yellow' },
       ]
     }
   ];
@@ -91,18 +91,18 @@ const Skills = () => {
           <div className={`bg-white rounded-xl shadow-lg p-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.6s' }}>
             <h3 className="text-xl font-bold text-portfolio-dark mb-6">Technologies I Work With</h3>
             <div className="flex flex-wrap gap-3">
-              <span className="skill-tag bg-portfolio-blue">HTML5</span>
-              <span className="skill-tag bg-portfolio-blue">CSS3</span>
-              <span className="skill-tag bg-portfolio-yellow">JavaScript</span>
-              <span className="skill-tag bg-portfolio-green">Bootstrap</span>
-              <span className="skill-tag bg-portfolio-blue">React.js</span>
-              <span className="skill-tag bg-portfolio-red">Responsive Web Design</span>
-              <span className="skill-tag bg-portfolio-dark">Git</span>
-              <span className="skill-tag bg-portfolio-blue">GitHub</span>
-              <span className="skill-tag bg-portfolio-green">VS Code</span>
-              <span className="skill-tag bg-portfolio-yellow">Web Performance</span>
-              <span className="skill-tag bg-portfolio-blue">Cross-Browser Compatibility</span>
-              <span className="skill-tag bg-portfolio-red">SEO Basics</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-blue">HTML5</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-blue">CSS3</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-yellow">JavaScript</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-green">Bootstrap</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-blue">React.js</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-red">Responsive Web Design</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-dark">Git</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-green">VS Code</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-blue">GitHub</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-yellow">Web Performance</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-blue">Cross-Browser Compatibility</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-red">SEO Basics</span>
             </div>
           </div>
         </div>
