@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ali-coder449.github.io/my-portfolio",
+  "homepage": "https://ali-coder449.github.io/ali-hassan-portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
