@@ -30,19 +30,13 @@ const Skills = () => {
         { name: 'HTML5', percentage: 95, color: 'bg-portfolio-red' },
         { name: 'CSS3', percentage: 90, color: 'bg-portfolio-blue' },
         { name: 'JavaScript', percentage: 85, color: 'bg-portfolio-yellow' },
-        { name: 'TypeScript', percentage: 80, color: 'bg-portfolio-blue' },
-        { name: 'React.js', percentage: 90, color: 'bg-portfolio-blue' },
-        { name: 'Next.js', percentage: 85, color: 'bg-portfolio-dark' },
-        { name: 'Tailwind CSS', percentage: 90, color: 'bg-portfolio-blue' },
+         { name: 'Tailwind CSS', percentage: 90, color: 'bg-portfolio-blue' },
         { name: 'Bootstrap', percentage: 90, color: 'bg-portfolio-green' },
       ]
     },
     {
       title: 'Backend & Tools',
       skills: [
-        { name: 'Node.js', percentage: 80, color: 'bg-portfolio-green' },
-        { name: 'Express.js', percentage: 75, color: 'bg-portfolio-dark' },
-        { name: 'MongoDB', percentage: 70, color: 'bg-portfolio-green' },
         { name: 'Git & GitHub', percentage: 85, color: 'bg-portfolio-dark' },
         { name: 'Responsive Design', percentage: 95, color: 'bg-portfolio-blue' },
         { name: 'UI/UX Design', percentage: 90, color: 'bg-portfolio-green' },
@@ -152,11 +146,6 @@ const Skills = () => {
                 whileTap={{ scale: 0.95 }}
               >JavaScript</motion.span>
               <motion.span 
-                className="cursor-pointer skill-tag bg-portfolio-blue"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >TypeScript</motion.span>
-              <motion.span 
                 className="cursor-pointer skill-tag bg-portfolio-green"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -171,21 +160,6 @@ const Skills = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >Tailwind CSS</motion.span>
-              <motion.span 
-                className="cursor-pointer skill-tag bg-portfolio-green"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >Node.js</motion.span>
-              <motion.span 
-                className="cursor-pointer skill-tag bg-portfolio-dark"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >Express.js</motion.span>
-              <motion.span 
-                className="cursor-pointer skill-tag bg-portfolio-green"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >MongoDB</motion.span>
               <motion.span 
                 className="cursor-pointer skill-tag bg-portfolio-dark"
                 whileHover={{ scale: 1.05 }}
