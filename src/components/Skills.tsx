@@ -29,6 +29,7 @@ const Skills = () => {
       skills: [
         { name: 'HTML5', percentage: 95, color: 'bg-portfolio-red' },
         { name: 'CSS3', percentage: 90, color: 'bg-portfolio-blue' },
+        { name: 'tailwind css', percentage: 90, color: 'bg-portfolio-green' },
         { name: 'JavaScript', percentage: 85, color: 'bg-portfolio-yellow' },
         { name: 'Bootstrap', percentage: 90, color: 'bg-portfolio-green' },
         { name: 'React.js', percentage: 90, color: 'bg-portfolio-blue' },
@@ -103,6 +104,7 @@ const Skills = () => {
               <span className="cursor-pointer skill-tag bg-portfolio-yellow">Web Performance</span>
               <span className="cursor-pointer skill-tag bg-portfolio-blue">Cross-Browser Compatibility</span>
               <span className="cursor-pointer skill-tag bg-portfolio-red">SEO Basics</span>
+              <span className="cursor-pointer skill-tag bg-portfolio-red">tailwind css</span>
             </div>
           </div>
         </div>
