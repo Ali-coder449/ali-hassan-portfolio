@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import DarkModeToggle from './DarkModeToggle';
 import SearchBar from './SearchBar';

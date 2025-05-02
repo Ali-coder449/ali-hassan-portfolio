@@ -1,6 +1,28 @@
+import { useCallback } from 'react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  const scrollToSection = useCallback((id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80; // Adjust this value based on your navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Update URL hash without scrolling
+      if (window.history.pushState) {
+        window.history.pushState(null, '', `#${id}`);
+      } else {
+        window.location.hash = `#${id}`;
+      }
+    }
+  }, []);
   
   return (
     <footer className="bg-portfolio-dark text-white py-12">
