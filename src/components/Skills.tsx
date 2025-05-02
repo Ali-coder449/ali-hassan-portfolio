@@ -1,5 +1,5 @@
-
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,7 +16,7 @@ const Skills = () => {
     };
     
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check on mount
+    handleScroll();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -25,44 +25,82 @@ const Skills = () => {
 
   const skillGroups = [
     {
-      title: 'Frontend',
+      title: 'Frontend Development',
       skills: [
         { name: 'HTML5', percentage: 95, color: 'bg-portfolio-red' },
         { name: 'CSS3', percentage: 90, color: 'bg-portfolio-blue' },
-        { name: 'tailwind css', percentage: 90, color: 'bg-portfolio-green' },
         { name: 'JavaScript', percentage: 85, color: 'bg-portfolio-yellow' },
-        { name: 'Bootstrap', percentage: 90, color: 'bg-portfolio-green' },
+        { name: 'TypeScript', percentage: 80, color: 'bg-portfolio-blue' },
         { name: 'React.js', percentage: 90, color: 'bg-portfolio-blue' },
+        { name: 'Next.js', percentage: 85, color: 'bg-portfolio-dark' },
+        { name: 'Tailwind CSS', percentage: 90, color: 'bg-portfolio-blue' },
+        { name: 'Bootstrap', percentage: 90, color: 'bg-portfolio-green' },
       ]
     },
     {
-      title: 'Tools & Others',
+      title: 'Backend & Tools',
       skills: [
+        { name: 'Node.js', percentage: 80, color: 'bg-portfolio-green' },
+        { name: 'Express.js', percentage: 75, color: 'bg-portfolio-dark' },
+        { name: 'MongoDB', percentage: 70, color: 'bg-portfolio-green' },
         { name: 'Git & GitHub', percentage: 85, color: 'bg-portfolio-dark' },
         { name: 'Responsive Design', percentage: 95, color: 'bg-portfolio-blue' },
-        { name: 'UI/UX Basics', percentage: 90, color: 'bg-portfolio-green' },
+        { name: 'UI/UX Design', percentage: 90, color: 'bg-portfolio-green' },
         { name: 'Performance Optimization', percentage: 85, color: 'bg-portfolio-yellow' },
       ]
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
     <section id="skills" className="section-padding bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <motion.div 
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="section-title inline-block mx-auto">My Skills</h2>
           <p className="text-portfolio-gray max-w-3xl mx-auto mt-6">
             I've acquired and refined various technical skills throughout my 2.5 years of
-            experience in web development, focusing primarily on frontend technologies.
+            experience in web development, focusing on both frontend and backend technologies.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {skillGroups.map((group, groupIndex) => (
-            <div 
+            <motion.div 
               key={group.title}
-              className={`card transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${groupIndex * 0.2}s` }}
+              className="card"
+              variants={itemVariants}
             >
               <h3 className="text-xl font-bold text-portfolio-dark mb-6">{group.title}</h3>
               <div className="space-y-6">
@@ -73,41 +111,94 @@ const Skills = () => {
                       <span className="text-portfolio-gray">{skill.percentage}%</span>
                     </div>
                     <div className="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
-                      <div 
-                        className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out`}
-                        style={{ 
-                          width: isVisible ? `${skill.percentage}%` : '0%',
-                          transitionDelay: `${(groupIndex * 0.2) + (index * 0.1)}s`
-                        }}
-                      ></div>
+                      <motion.div 
+                        className={`h-full ${skill.color} rounded-full`}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.percentage}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.1 }}
+                      ></motion.div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         
-        <div className="mt-16">
-          <div className={`bg-white rounded-xl shadow-lg p-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.6s' }}>
+        <motion.div 
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="bg-white rounded-xl shadow-lg p-8">
             <h3 className="text-xl font-bold text-portfolio-dark mb-6">Technologies I Work With</h3>
             <div className="flex flex-wrap gap-3">
-              <span className="cursor-pointer skill-tag bg-portfolio-blue">HTML5</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-blue">CSS3</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-yellow">JavaScript</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-green">Bootstrap</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-blue">React.js</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-red">Responsive Web Design</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-dark">Git</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-green">VS Code</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-blue">GitHub</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-yellow">Web Performance</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-blue">Cross-Browser Compatibility</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-red">SEO Basics</span>
-              <span className="cursor-pointer skill-tag bg-portfolio-red">tailwind css</span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-blue"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >HTML5</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-blue"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >CSS3</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-yellow"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >JavaScript</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-blue"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >TypeScript</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-green"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >React.js</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-dark"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >Next.js</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-blue"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >Tailwind CSS</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-green"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >Node.js</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-dark"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >Express.js</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-green"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >MongoDB</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-dark"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >Git</motion.span>
+              <motion.span 
+                className="cursor-pointer skill-tag bg-portfolio-blue"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >GitHub</motion.span>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
